@@ -21,7 +21,23 @@ app.use(compression());
 
 // CORS — allow frontend origins
 app.use(cors({
-  origin: [process.env.CLIENT_URL, 'http://localhost:5173'].filter(Boolean),
+  origin: function (origin, callback) {
+    if (!origin) return callback(null, true); // Allow non-browser clients like Postman
+    
+    const allowed = [
+      process.env.CLIENT_URL,
+      'http://localhost:5173',
+      'https://ekagrazi.com',
+      'https://www.ekagrazi.com'
+    ];
+    
+    // Allow exactly matched domains, or any vercel.app subdomain
+    if (allowed.includes(origin) || origin.endsWith('.vercel.app')) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   credentials: true,
 }));
 
