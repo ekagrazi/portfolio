@@ -43,6 +43,11 @@ export default function Navbar() {
 
   useEffect(() => setMenuOpen(false), [location]);
 
+  // Hide the global navbar entirely on all admin routes
+  if (location.pathname.startsWith('/admin')) {
+    return null;
+  }
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
