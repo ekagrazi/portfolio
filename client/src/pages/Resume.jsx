@@ -56,7 +56,6 @@ export default function Resume() {
       <ShootingStars />
       <main className="pt-24 min-h-screen">
         <div className="section">
-        <div className="section">
           <AnimatedSection className="mb-10">
             <p className="section-label">Credentials</p>
             <ClipReveal>
