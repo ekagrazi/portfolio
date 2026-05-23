@@ -31,8 +31,8 @@ app.use(cors({
       'https://www.ekagrazi.com'
     ];
     
-    // Allow exactly matched domains, or any vercel.app subdomain
-    if (allowed.includes(origin) || origin.endsWith('.vercel.app')) {
+    // Strict exact match only
+    if (allowed.includes(origin)) {
       callback(null, true);
     } else {
       callback(new Error('Not allowed by CORS'));
