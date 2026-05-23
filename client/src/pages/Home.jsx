@@ -4,15 +4,17 @@ import { Mail, Phone, ArrowRight } from 'lucide-react';
 import { GithubIcon as Github, LinkedinIcon as Linkedin } from '../components/Icons';
 
 import SphereBg          from '../components/SphereBg';
+import ShootingStars     from '../components/ShootingStars';
 import AnimatedSection   from '../components/AnimatedSection';
 import StaggerContainer  from '../components/StaggerContainer';
 import ClipReveal        from '../components/ClipReveal';
 import Marquee           from '../components/Marquee';
 import ProjectCard       from '../components/ProjectCard';
+import CertCard          from '../components/CertCard';
 import PageTransition    from '../components/PageTransition';
 import { useMagnet }     from '../hooks/useMagnet';
 import { useTypewriter } from '../hooks/useTypewriter';
-import { owner, projects } from '../data/portfolioData';
+import { owner, projects, certifications } from '../data/portfolioData';
 
 function MagneticBtn({ to, href, children, external = false }) {
   const { ref, onMouseMove, onMouseLeave } = useMagnet(0.25);
@@ -45,8 +47,9 @@ const techStrip2 = [
 ];
 
 export default function Home() {
-  const featured = projects.slice(0, 3);
-  const role     = useTypewriter(
+  const featured      = projects.slice(0, 3);
+  const featuredCerts = certifications.slice(0, 6);
+  const role          = useTypewriter(
     owner.typewriterRoles,
     75, 45, 2000
   );
@@ -56,6 +59,7 @@ export default function Home() {
       <main>
         <section className="relative min-h-screen flex flex-col justify-center pt-16 px-6 overflow-hidden grain-overlay">
           <SphereBg />
+          <ShootingStars />
 
           {/* Radial gradient vignette over sphere */}
           <div
@@ -227,6 +231,27 @@ export default function Home() {
             </div>
           </AnimatedSection>
         </section>
+
+        <div className="divider" />
+
+        <div className="section">
+          <AnimatedSection>
+            <p className="section-label">Credentials</p>
+            <ClipReveal><h2 className="section-heading">Certifications</h2></ClipReveal>
+            <div className="flex items-center justify-between">
+              <p className="section-sub">A snapshot of my qualifications.</p>
+              <Link to="/about" className="btn-sm mb-12">
+                <span>View all {certifications.length} certs</span>
+                <span><ArrowRight size={12} /></span>
+              </Link>
+            </div>
+          </AnimatedSection>
+          <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4" staggerDelay={0.06}>
+            {featuredCerts.map((cert, i) => (
+              <CertCard key={i} cert={cert} />
+            ))}
+          </StaggerContainer>
+        </div>
 
         <div className="divider" />
 

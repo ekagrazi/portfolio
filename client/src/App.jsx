@@ -15,6 +15,7 @@ import About               from './pages/About';
 import Contact             from './pages/Contact';
 import AdminLogin          from './pages/admin/AdminLogin';
 import AdminDashboard      from './pages/admin/AdminDashboard';
+import NebulaBg            from './components/NebulaBg';
 
 // AnimatePresence needs access to useLocation — must be inside BrowserRouter
 function AnimatedRoutes() {
@@ -42,6 +43,7 @@ export default function App() {
       <BrowserRouter>
         <SmoothScroll>
           <CustomCursor />
+          <NebulaBg />
           <Navbar />
           <AnimatedRoutes />
           <Footer />

@@ -15,11 +15,23 @@ export default function About() {
       <ShootingStars />
       <main className="pt-24">
         <div className="section">
-          <AnimatedSection>
-            <p className="section-label">Background</p>
-            <ClipReveal><h1 className="section-heading">About Me</h1></ClipReveal>
-            <p className="text-white/40 text-sm leading-loose max-w-2xl mb-4">{owner.bio}</p>
-            <p className="text-white/25 text-xs">{owner.location}</p>
+          <AnimatedSection className="flex flex-col md:flex-row gap-12 items-center md:items-start">
+            <div className="flex-1">
+              <p className="section-label">Background</p>
+              <ClipReveal><h1 className="section-heading">About Me</h1></ClipReveal>
+              <p className="text-white/40 text-sm leading-loose mb-4">{owner.bio}</p>
+              <p className="text-white/25 text-xs">{owner.location}</p>
+            </div>
+            
+            <div className="w-48 md:w-64 shrink-0 rounded-2xl overflow-hidden border border-white/10 relative group shadow-2xl">
+              {/* Subtle dark tint that clears on hover */}
+              <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none" />
+              <img 
+                src="/images/profilePhoto.webp" 
+                alt={owner.name}
+                className="w-full h-auto object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105"
+              />
+            </div>
           </AnimatedSection>
         </div>
 

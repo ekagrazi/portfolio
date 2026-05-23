@@ -1,7 +1,7 @@
 // ── Owner ─────────────────────────────────────────────────────────────────
 export const owner = {
   name:     'Ekagra Gupta',
-  role:     'Full-Stack Developer | AI/ML Engineer | Cybersecurity Enthusiast',
+  role:     'Computer Science Student',
   subrole:  'COMPUTER SCIENCE STUDENT',
   tagline:  'Building intelligent systems at the intersection of AI and security.',
   location: 'Lucknow, India',
@@ -159,7 +159,7 @@ export const education = [
     school:   'VIT Bhopal University',
     location: 'Sehore, Madhya Pradesh',
     degree:   'B.Tech in Computer Science and Engineering (CSDF)',
-    score:    'CGPA: 8.5 / 10',
+    score:    'CGPA: 8.6 / 10',
     period:   '2023 – 2027',
     current:  true,
   },
@@ -169,6 +169,14 @@ export const education = [
     degree:   'Class XII (CBSE)',
     score:    '85.6%',
     period:   '2022',
+    current:  false,
+  },
+  {
+    school:   'Maharaja Agrasen Public School',
+    location: 'Lucknow, Uttar Pradesh',
+    degree:   'Class X (CBSE)',
+    score:    '85.2%',
+    period:   '2020',
     current:  false,
   },
 ];
@@ -229,6 +237,13 @@ export const certifications = [
     credentialId: 'wM6w7-H9Hw',
     url:          null,
     image:        '/images/certs/microsoft-sc900.png',
+  },
+  {
+    issuer: 'Hitesh Chaudhary (Udemy)',
+    title:  'Complete Web Development Course',
+    desc:   'Certified in modern full-stack web development with hands-on experience in React, Node.js, PostgreSQL, and AI integration.',
+    url:    'https://udemy-certificate.s3.amazonaws.com/pdf/UC-8d3eeb22-be17-4b3c-ac2c-78ee8aac8952.pdf',
+    image:  '/images/certs/udemy-webdev.png',
   },
   {
     issuer: 'NPTEL',

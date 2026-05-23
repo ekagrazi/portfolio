@@ -16,7 +16,7 @@ const transporter = nodemailer.createTransport({
 // ── POST /api/contact ──────────────────────────────────────────────────────
 // Public. Validates, saves to DB, sends two emails.
 router.post('/', async (req, res) => {
-  const { name, email, subject, message } = req.body;
+  let { name, email, subject, message } = req.body;
 
   if (!name?.trim() || !email?.trim() || !message?.trim()) {
     return res.status(400).json({ message: 'Name, email, and message are required.' });
@@ -24,6 +24,17 @@ router.post('/', async (req, res) => {
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     return res.status(400).json({ message: 'Please enter a valid email address.' });
   }
+
+  // Length validation
+  if (name.trim().length > 20) return res.status(400).json({ message: 'Name must be under 20 characters.' });
+  if (message.trim().length > 250) return res.status(400).json({ message: 'Message must be under 250 characters.' });
+  if (subject && subject.trim().length > 50) return res.status(400).json({ message: 'Subject must be under 50 characters.' });
+
+  // HTML Sanitization to prevent XSS/Injection
+  const escapeHTML = (str) => str ? str.replace(/[&<>'"]/g, tag => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[tag])) : '';
+  name = escapeHTML(name.trim());
+  subject = escapeHTML(subject?.trim());
+  message = escapeHTML(message.trim());
 
   try {
     const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress || '';
@@ -33,7 +44,7 @@ router.post('/', async (req, res) => {
     await transporter.sendMail({
       from:    `"Portfolio Contact" <${process.env.EMAIL_USER}>`,
       to:      process.env.ADMIN_EMAIL,
-      subject: `[Portfolio] ${subject?.trim() || 'New message'} — from ${name}`,
+      subject: `[Portfolio] ${subject || 'New message'} — from ${name}`,
       html: `
         <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;background:#0a0a0a;color:#ffffff;padding:32px;border-radius:4px;">
           <h2 style="margin:0 0 20px;font-size:18px;border-bottom:1px solid #222;padding-bottom:14px;">

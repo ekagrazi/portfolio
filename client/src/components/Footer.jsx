@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 import { Mail, Copy, Check } from 'lucide-react';
 import { GithubIcon as Github, LinkedinIcon as Linkedin } from './Icons';
 import toast from 'react-hot-toast';
@@ -24,24 +25,39 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-6 py-12">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           {/* Left */}
-          <div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
             <p className="text-white text-sm font-medium tracking-wide">
               Ekagra Gupta<span className="text-white/20">.</span>
             </p>
             <p className="text-white/20 text-xs mt-1">{owner.role}</p>
-          </div>
+          </motion.div>
 
           {/* Center — copy email */}
-          <button
+          <motion.button
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
             onClick={copyEmail}
             className="flex items-center gap-2 text-white/25 hover:text-white text-xs transition-colors duration-200 group"
           >
             {copied ? <Check size={12} /> : <Copy size={12} />}
             <span>{owner.email}</span>
-          </button>
+          </motion.button>
 
           {/* Right — social links */}
-          <div className="flex items-center gap-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="flex items-center gap-4"
+          >
             <a
               href={owner.social.github}
               target="_blank"
@@ -67,14 +83,20 @@ export default function Footer() {
             >
               <Mail size={16} />
             </a>
-          </div>
+          </motion.div>
         </div>
 
-        <div className="mt-8 pt-6 border-t border-white/5 text-center">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="mt-8 pt-6 border-t border-white/5 text-center"
+        >
           <p className="text-white/15 text-xs">
             © {new Date().getFullYear()} Ekagra Gupta. All rights reserved.
           </p>
-        </div>
+        </motion.div>
       </div>
     </footer>
   );
