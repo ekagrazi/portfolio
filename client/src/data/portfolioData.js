@@ -35,7 +35,7 @@ export const projects = [
     tech: ['PyTorch', 'FastAPI', 'React', 'MediaPipe', 'Electron', 'WebSockets', 'BiLSTM', 'PyInstaller'],
     githubUrl: 'https://github.com/ekagrazi/Disability_Aid_ISL_Gesture_Recognition',
     liveUrl: null,
-    image: '/images/projects/disability-aid.png',
+    image: '/images/projects/Disability-Aid.webp',
   },
   {
     id: 'redteam-toolkit',
@@ -50,7 +50,7 @@ export const projects = [
     tech: ['Python', 'PyQt6', 'Selenium', 'Sockets', 'BeautifulSoup', 'dnspython', 'python-whois'],
     githubUrl: 'https://github.com/ekagrazi/RedTeamToolkit',
     liveUrl: null,
-    image: '/images/projects/redteam-toolkit.png',
+    image: '/images/projects/Red-Team-Toolkit.webp',
   },
   {
     id: 'flight-delay',
@@ -65,7 +65,7 @@ export const projects = [
     tech: ['Python', 'Scikit-Learn', 'Flask', 'Pandas', 'NumPy', 'XGBoost', 'Random Forest'],
     githubUrl: 'https://github.com/ekagrazi/Flight-Delay-Prediction-using-ML',
     liveUrl: null,
-    image: '/images/projects/flight-delay.png',
+    image: '/images/projects/Flight-Delay-Prediction_System.webp',
   },
   {
     id: 'ccrm',
@@ -80,7 +80,7 @@ export const projects = [
     tech: ['Java SE', 'OOP', 'File I/O', 'CSV', 'Design Patterns'],
     githubUrl: 'https://github.com/ekagrazi/Campus-Course-Records-Manager',
     liveUrl: null,
-    image: '/images/projects/ccrm.png',
+    image: '/images/projects/Campus-course-and-record-manager.webp',
   },
   {
     id: 'steghide',
@@ -95,7 +95,7 @@ export const projects = [
     tech: ['Python', 'LSB Steganography', 'Zero-Width Characters', 'CLI', 'File Processing'],
     githubUrl: '#',
     liveUrl: null,
-    image: '/images/projects/steghide.png',
+    image: '/images/projects/StegHide.webp',
   },
   {
     id: 'openmodelica',
@@ -110,7 +110,7 @@ export const projects = [
     tech: ['Python', 'PyQt6', 'OpenModelica', 'MVC', 'Subprocess Management'],
     githubUrl: '#',
     liveUrl: null,
-    image: '/images/projects/openmodelica.png',
+    image: '/images/projects/OpenModelica-PyQt-Desktop-App.webp',
   },
   {
     id: 'dwsim',
@@ -125,7 +125,7 @@ export const projects = [
     tech: ['Python', '.NET API', 'DWSIM', 'Parametric Simulation', 'Scientific Computing', 'Matplotlib'],
     githubUrl: '#',
     liveUrl: null,
-    image: '/images/projects/dwsim.png',
+    image: '/images/projects/DWSIM-Python-GUI.webp',
   },
 ];
 
@@ -198,19 +198,19 @@ export const experience = [
 // ── Achievements ──────────────────────────────────────────────────────────
 export const achievements = [
   {
-    org:   'Competitive & Community',
-    title: '2nd Place — Mystery Manor',
-    desc:  'Secured 2nd place in Mystery Manor, a cybersecurity challenge event organized in AdVITya, VIT Bhopal.',
-  },
-  {
     org:   'Club Leadership',
     title: 'Social Media Team Lead',
     desc:  'Served as Social Media Team Lead for Eureka Club and Cyber Warriors Club, VIT Bhopal — managed content strategy and grew engagement across platforms for both clubs.',
   },
   {
-    org:   'National Competitions',
+    org:   'Competitions',
     title: 'CodeRed & KashiCTF Participant',
     desc:  'Participated in CodeRed (NITK) and KashiCTF (IIT BHU) — national-level competitive coding and Capture The Flag events.',
+  },
+  {
+    org:   'Competitive & Community',
+    title: '2nd Place — Mystery Manor',
+    desc:  'Secured 2nd place in Mystery Manor, a cybersecurity challenge event organized in AdVITya, VIT Bhopal.',
   },
 ];
 
@@ -221,14 +221,14 @@ export const certifications = [
     title:  'Machine Learning Specialization',
     desc:   'Supervised, Unsupervised & Reinforcement Learning by Andrew Ng',
     url:    'https://coursera.org/share/948f13211c452db250712f4234669ca8',
-    image:  '/images/certs/stanford-ml.png',
+    image:  '/images/certs/Stanford-ML-Specialization.webp',
   },
   {
     issuer: 'Google (Coursera)',
     title:  'The Bits and Bytes of Computer Networking',
     desc:   'Google-verified networking fundamentals certification.',
     url:    'https://www.coursera.org/account/accomplishments/verify/PH4BRW55YP87',
-    image:  '/images/certs/google-networking.png',
+    image:  '/images/certs/Google-Bits-and-bytes.webp',
   },
   {
     issuer:       'Microsoft',
@@ -236,55 +236,55 @@ export const certifications = [
     desc:         'Microsoft Certified: Security, Compliance, and Identity Fundamentals.',
     credentialId: 'wM6w7-H9Hw',
     url:          null,
-    image:        '/images/certs/microsoft-sc900.png',
+    image:        '/images/certs/Microsoft-sc-900.webp',
   },
   {
     issuer: 'Hitesh Chaudhary (Udemy)',
     title:  'Complete Web Development Course',
     desc:   'Certified in modern full-stack web development with hands-on experience in React, Node.js, PostgreSQL, and AI integration.',
     url:    'https://udemy-certificate.s3.amazonaws.com/pdf/UC-8d3eeb22-be17-4b3c-ac2c-78ee8aac8952.pdf',
-    image:  '/images/certs/udemy-webdev.png',
+    image:  '/images/certs/WEB-DEV_Hitesh.webp',
   },
   {
     issuer: 'NPTEL',
     title:  'Blockchain and its Applications',
     desc:   'NPTEL certified course on blockchain fundamentals and applications.',
     url:    'https://archive.nptel.ac.in/noc/Ecertificate/?q=NPTEL25CS08S65060040304211406',
-    image:  '/images/certs/nptel-blockchain.png',
+    image:  '/images/certs/Nptel-Blockchain.webp',
   },
   {
     issuer: 'IBM (Credly)',
     title:  'Getting Started with Cybersecurity',
     desc:   'IBM-issued badge for foundational cybersecurity knowledge.',
     url:    'https://www.credly.com/badges/e3ceb19b-2ecb-4488-a5a5-b63f0e76a7a6/public_url',
-    image:  '/images/certs/ibm-cybersecurity.png',
+    image:  '/images/certs/IBM-getting-started-with-cybersecurity.webp',
   },
   {
     issuer: 'Google Cloud (Credly)',
     title:  'Introduction to Generative AI',
     desc:   'Google Cloud verified badge for GenAI fundamentals.',
     url:    'https://www.credly.com/badges/b764e347-ce76-402b-8247-76f474d06db4/public_url',
-    image:  '/images/certs/google-genai.png',
+    image:  '/images/certs/Google-Credly-intro-to-generative-ai.webp',
   },
   {
     issuer: 'GeeksForGeeks',
     title:  'Python Programming Foundation',
     desc:   'GFG certificate for Python programming fundamentals.',
     url:    'https://www.geeksforgeeks.org/certificate/0c0959a85bb6520b5ba216942e3f6829',
-    image:  '/images/certs/gfg-python.png',
+    image:  '/images/certs/GFG-Python-Programming.webp',
   },
   {
     issuer: 'GeeksForGeeks',
     title:  'Full Stack Developer Bootcamp',
     desc:   'GFG certificate for full-stack web development.',
     url:    'https://media.geeksforgeeks.org/courses/certificates/9363a056a3d91a6b04657c4c7aad1dc2.pdf',
-    image:  '/images/certs/gfg-fullstack.png',
+    image:  '/images/certs/GFG-Full-Stack.webp',
   },
   {
     issuer: 'Postman',
     title:  'API Fundamentals Student Expert',
     desc:   'Postman-verified certification for REST API fundamentals.',
     url:    'https://badges.parchment.com/public/assertions/vh-qhgRvTkKcDy7yxFy4_g?identity__email=ekagragupta814@gmail.com',
-    image:  '/images/certs/postman-api.png',
+    image:  '/images/certs/Postman-API-Fundamentals-Student-Expert.webp',
   },
 ];

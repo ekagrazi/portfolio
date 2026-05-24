@@ -63,18 +63,8 @@ const authLimiter = rateLimit({
   message: { message: 'Too many login attempts, please try again later.' },
 });
 
-// Strict rate limit for contact form: 5 messages per 15 minutes per IP
-const contactLimiter = rateLimit({
-  windowMs: 15 * 60 * 1000,
-  max: 5,
-  standardHeaders: true,
-  legacyHeaders: false,
-  message: { message: 'Too many messages sent. Please try again later.' },
-});
-
 app.use('/api/', generalLimiter);
 app.use('/api/auth/login', authLimiter);
-app.use('/api/contact', contactLimiter);
 
 // ── Trust proxy (required for rate limiting behind Render/Vercel proxies) ──
 app.set('trust proxy', 1);

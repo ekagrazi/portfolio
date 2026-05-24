@@ -1,8 +1,18 @@
 const express    = require('express');
 const router     = express.Router();
 const nodemailer = require('nodemailer');
+const rateLimit  = require('express-rate-limit');
 const Message    = require('../models/Message');
 const { protect } = require('../middleware/authMiddleware');
+
+// Strict rate limit for contact form: 5 messages per 15 minutes per IP
+const contactLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 5,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { message: 'Too many messages sent. Please try again later.' },
+});
 
 // Gmail transporter
 const transporter = nodemailer.createTransport({
@@ -15,7 +25,7 @@ const transporter = nodemailer.createTransport({
 
 // ── POST /api/contact ──────────────────────────────────────────────────────
 // Public. Validates, saves to DB, sends two emails.
-router.post('/', async (req, res) => {
+router.post('/', contactLimiter, async (req, res) => {
   let { name, email, subject, message } = req.body;
 
   if (!name?.trim() || !email?.trim() || !message?.trim()) {

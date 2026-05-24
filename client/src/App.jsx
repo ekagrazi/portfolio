@@ -16,6 +16,7 @@ import Contact             from './pages/Contact';
 import AdminLogin          from './pages/admin/AdminLogin';
 import AdminDashboard      from './pages/admin/AdminDashboard';
 import NebulaBg            from './components/NebulaBg';
+import { Analytics }       from '@vercel/analytics/react';
 
 // AnimatePresence needs access to useLocation — must be inside BrowserRouter
 function AnimatedRoutes() {
@@ -62,6 +63,7 @@ export default function App() {
             },
           }}
         />
+        <Analytics />
       </BrowserRouter>
     </AuthProvider>
   );
